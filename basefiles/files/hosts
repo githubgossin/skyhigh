@@ -1,0 +1,21 @@
+127.0.0.1	localhost
+10.10.10.1	compute01.skyhigh compute01
+10.10.10.2	compute02.skyhigh compute02
+10.10.10.3	compute03.skyhigh compute03
+10.10.10.4	compute04.skyhigh compute04
+10.10.10.51	chiles.skyhigh chiles
+10.10.10.52	steinbrenner.skyhigh steinbrenner
+10.10.10.101    storage01.skyhigh storage01
+10.10.10.102    storage02.skyhigh storage02
+10.10.10.200	pitt.skyhigh pitt
+
+10.30.30.101    drake
+10.30.30.102    kruger
+
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
