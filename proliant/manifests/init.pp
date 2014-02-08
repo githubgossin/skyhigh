@@ -1,6 +1,6 @@
-# == Class: basefiles
+# == Class: proliant
 #
-# Full description of class basefiles here.
+# Full description of class proliant here.
 #
 # === Parameters
 #
@@ -23,7 +23,7 @@
 #
 # === Examples
 #
-#  class { basefiles:
+#  class { proliant:
 #    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ]
 #  }
 #
@@ -35,13 +35,17 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class basefiles {
-  file { "/etc/hosts":
-    mode   => 644,
-    owner  => root,
-    group  => root,
-    source => "puppet:///modules/basefiles/hosts"
+
+include apt 
+
+class proliant {
+
+  apt::key { 'hwraid':
+    ensure     => 'present',
+    key_source => 'http://hwraid.le-vert.net/debian/hwraid.le-vert.net.gpg.key',
   }
+
+
 }
 
 
