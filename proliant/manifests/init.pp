@@ -40,11 +40,18 @@ include apt
 
 class proliant {
 
-  apt::key { 'hwraid':
-    ensure     => 'present',
+  apt::source { 'hwraid':
+    location   => 'http://hwraid.le-vert.net/debian',
+    release    => 'wheezy',
+    repos      => 'main',
+    key        => 'true',
     key_source => 'http://hwraid.le-vert.net/debian/hwraid.le-vert.net.gpg.key',
+    before     => Package['hpacucli'],
   }
 
+  package { 'hpacucli':
+    ensure     => 'latest',
+  }
 
 }
 
